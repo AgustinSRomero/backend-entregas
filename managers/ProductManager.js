@@ -6,49 +6,59 @@ export default class ProductManager{
     }
 
     async getProducts() {
-       const data = await fs.promises.readFile(this.path, 'utf-8');
-        if (data) {
-            const products = JSON.parse(data);
-            return products;
-        }
-        else{
+        try {
+            if (fs.existsSync(this.path)) {
+                const data = await fs.promises.readFile(this.path, 'utf-8');
+                const products = JSON.parse(data);
+                return products;
+            }
+
+            console.log("Path no existe")
+            await fs.promises.writeFile(this.path, '[]', 'utf-8')
             return [] 
+        } catch (error) {
+            return console.log(error)
         }
     }
-
+    
     async addProduct(title, description, price, thumbnail, code, stock){
-        const product = {
-            title,
-            description,
-            price,
-            thumbnail,
-            code,
-            stock
+        try {
+            const product = {
+                title,
+                description,
+                price,
+                thumbnail,
+                code,
+                stock
+            }
+            
+            const products = await this.getProducts();
+    
+            // chequeo si el codigo existe
+            const codeRegistered = products.find(item => item.code === product.code);
+            if(codeRegistered){
+                return console.log(`Product code already exist.`);
+            }
+    
+            // genero id automático
+            if(products.length === 0){
+                product.id = 1
+            }else{
+                product.id = products[products.length-1].id +1;
+            }
+    
+            // Chequeo que los campos esten completos y pusheo o rechazo
+            if(product.title && product.description && product.price && product.thumbnail && product.code && product.stock){
+                products.push(product)
+                const productsJSON = JSON.stringify(products, null, 2)
+                await fs.promises.writeFile(this.path, productsJSON, 'utf-8')
+                return console.log("The product has been created with success.")
+            }else{
+                return console.log("Missing required information.");
+            }
+        } catch (error) {
+            return console.log(error);
         }
-
-        const products = await this.getProducts()
-
-        // chequeo si el codigo existe
-        const codeRegistered = products.find(item => item.code === product.code);
-        if(codeRegistered){
-            return console.log(`Product code already exist.`);
-        }
-
-        // genero id automático
-        if(products.length === 0){
-            product.id = 1
-        }else{
-            product.id = products[products.length-1].id +1;
-        }
-
-        // Chequeo que los campos esten completos y pusheo o rechazo
-        if(product.title && product.description && product.price && product.thumbnail && product.code && product.stock){
-            products.push(product);
-            await fs.promises.writeFile(this.path, JSON.stringify(products, null, 2))
-            return console.log("The product has been created with success.")
-        }else{
-            return console.log("Missing required information.");
-        } 
     }
 
     async getProductById(searchId){
