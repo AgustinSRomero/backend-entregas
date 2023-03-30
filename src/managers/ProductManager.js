@@ -2,7 +2,7 @@ import fs from 'fs';
 
 export default class ProductManager{
     constructor(){
-        this.path = './files/data.json';
+        this.path = '../files/data.json';
     }
 
     async getProducts() {
@@ -16,6 +16,22 @@ export default class ProductManager{
             console.log("Path no existe")
             await fs.promises.writeFile(this.path, '[]', 'utf-8')
             return [] 
+        } catch (error) {
+            return console.log(error)
+        }
+    }
+
+    async limitProducts(limit){
+        try {
+            const products = await this.getProducts()
+            const limitProducts = []
+
+            for (let index = 0; index < limit; index++) {
+                let item = products[index]
+                limitProducts.push(item)
+            }
+
+            return limitProducts
         } catch (error) {
             return console.log(error)
         }
@@ -67,9 +83,9 @@ export default class ProductManager{
             const productIndex = products.findIndex(item => item.id === searchId);
     
             if(productIndex === -1){
-                return console.log("Product not found");
+                return {error: "The product with that ID is not found, please try again with another ID."};
             }else{
-                return console.log(products[productIndex]);
+                return products[productIndex];
             }
         } catch (error) {
             return console.log(error);
