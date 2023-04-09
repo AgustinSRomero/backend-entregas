@@ -1,0 +1,185 @@
+[
+  {
+    "title": "Aguja",
+    "description": "De metal",
+    "price": 60,
+    "thumbnail": [
+      "img-url",
+      "img-url2"
+    ],
+    "code": "AGU001",
+    "stock": 25,
+    "id": 1,
+    "category": "agujas",
+    "status": true
+  },
+  {
+    "title": "Alfiler",
+    "description": "De cabeza plástica",
+    "price": 15,
+    "thumbnail": [
+      "img-url",
+      "img-url2"
+    ],
+    "code": "ALF001",
+    "stock": 50,
+    "id": 2,
+    "category": "alfileres",
+    "status": true
+  },
+  {
+    "title": "Cinta",
+    "description": "Raso",
+    "price": 160,
+    "thumbnail": [
+      "img-url",
+      "img-url2"
+    ],
+    "code": "CINR020",
+    "stock": 10,
+    "id": 3,
+    "category": "cintas",
+    "status": true
+  },
+  {
+    "title": "Bies",
+    "description": "Angosto",
+    "price": 250,
+    "thumbnail": [
+      "img-url",
+      "img-url2"
+    ],
+    "code": "BSANG04",
+    "stock": 25,
+    "id": 4,
+    "category": "cintas",
+    "status": true
+  },
+  {
+    "title": "Cierre",
+    "description": "De metal",
+    "price": 60,
+    "thumbnail": [
+      "img-url",
+      "img-url2"
+    ],
+    "code": "CIER001",
+    "stock": 25,
+    "id": 5,
+    "category": "cierres",
+    "status": true
+  },
+  {
+    "title": "Pegamento",
+    "description": "Universal",
+    "price": 15,
+    "thumbnail": [
+      "img-url",
+      "img-url2"
+    ],
+    "code": "PEG011",
+    "stock": 50,
+    "id": 6,
+    "category": "pegamentos",
+    "status": true
+  },
+  {
+    "title": "Cierre",
+    "description": "Plástico",
+    "price": 160,
+    "thumbnail": [
+      "img-url",
+      "img-url2"
+    ],
+    "code": "CIER024",
+    "stock": 10,
+    "id": 7,
+    "category": "cierres",
+    "status": true
+  },
+  {
+    "title": "Puntilla",
+    "description": "Algodón",
+    "price": 250,
+    "thumbnail": [
+      "img-url",
+      "img-url2"
+    ],
+    "code": "PNTALG054",
+    "stock": 25,
+    "id": 8,
+    "category": "puntillas",
+    "status": true
+  },
+  {
+    "title": "Cinta",
+    "description": "Raso Motivo",
+    "price": 60,
+    "thumbnail": [
+      "img-url",
+      "img-url2"
+    ],
+    "code": "CINR421",
+    "stock": 25,
+    "id": 9,
+    "category": "cintas",
+    "status": true
+  },
+  {
+    "title": "Mendafacil",
+    "description": "Jea",
+    "price": 15,
+    "thumbnail": [
+      "img-url",
+      "img-url2"
+    ],
+    "code": "MEND154",
+    "stock": 50,
+    "id": 10,
+    "category": "arreglos",
+    "status": true
+  },
+  {
+    "title": "Hilo",
+    "description": "Encerado",
+    "price": 160,
+    "thumbnail": [
+      "img-url",
+      "img-url2"
+    ],
+    "code": "HIL354",
+    "stock": 10,
+    "id": 11,
+    "category": "hilos",
+    "status": true
+  },
+  {
+    "title": "Hilo",
+    "description": "Bobina",
+    "price": 250,
+    "thumbnail": [
+      "img-url",
+      "img-url2"
+    ],
+    "code": "HIL084",
+    "stock": 25,
+    "id": 12,
+    "category": "hilos",
+    "status": true
+  },
+  {
+    "title": "Botones",
+    "description": "2 agujeros",
+    "code": "BOT027",
+    "price": 50,
+    "status": false,
+    "stock": 60,
+    "category": "botones",
+    "thumbnails": [
+      "img-url",
+      "img-url2",
+      "img-url3"
+    ],
+    "id": 13
+  }
+]
